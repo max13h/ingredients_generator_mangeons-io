@@ -1,11 +1,8 @@
 # frozen_string_literal: false
-require_relative './modules/authentification'
-require_relative './modules/send_prompts'
-require 'fileutils'
+
+require_relative './image_generation/authentification'
+require_relative './image_generation/send_prompts'
 require 'watir'
-
-FileUtils.mkdir_p(File.join('./images_downloaded'))
-
 
 def image_generation
   browser = Watir::Browser.new :chrome, options: { binary: MY_ENV['chrome_bin'] }

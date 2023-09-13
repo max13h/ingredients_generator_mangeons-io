@@ -1,18 +1,21 @@
-require "./src/csv_generator.rb"
+require_relative "./modules/csv_generator.rb"
+require 'fileutils'
 
-puts `clear`
 puts "===================================================================="
-puts "       CSV generation for mangeons.io ingredients"
+puts "                    Module: CSV generation"
 puts "===================================================================="
 puts ""
 puts ""
-puts ""
-puts "!!! MAKE SURE YOUR FILE IS INSIDE THE FOLDER 'food_lists' !!!"
-puts "Enter the file name to use (eg: food_list.txt ):"
+puts "!!! MAKE SURE YOUR FILE IS INSIDE THE FOLDER './food_lists' !!!"
+puts "Enter the FILE NAME to use (eg: food_list.txt ):"
 puts ""
 
-FILE_NAME = gets.chomp
-FILE_PATH = "./food_lists/#{FILE_NAME}"
+
+FILE_NAME = File.basename(gets.chomp, ".txt")
+FILE_PATH = "./food_lists/#{FILE_NAME}.txt"
+OUTPUT_PATH = "./output/#{FILE_NAME}"
+
+FileUtils.mkdir_p(OUTPUT_PATH)
 
 nb_of_ingredients = File.open(FILE_PATH, &:count)
 
@@ -28,6 +31,7 @@ puts ""
 puts "============================"
 puts "     Starting the app"
 puts "============================"
+puts ""
 puts ""
 puts "Creation of the CSV file..."
 puts ""

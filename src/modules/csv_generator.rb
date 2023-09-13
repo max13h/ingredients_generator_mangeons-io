@@ -4,7 +4,7 @@ require 'csv'
 
 def csv_generator
   path = FILE_PATH
-  csv_file_path = "./food_lists/CSV_from_#{FILE_NAME}.csv"
+  csv_file_path = "#{OUTPUT_PATH}/CSV_from_#{FILE_NAME}.csv"
 
   CSV.open(csv_file_path, 'w') do |csv|
     csv << ["name", "name_fr", "guide_price", "store_area_id"]
