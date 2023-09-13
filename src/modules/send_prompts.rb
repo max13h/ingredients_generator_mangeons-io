@@ -16,6 +16,6 @@ def send_prompts(browser)
     browser.send_keys(:enter)
 
     puts "Prompt #{prompt_nb} sent."
-    sleep 5
+    sleep 9
   end
 end
