@@ -48,7 +48,6 @@
 3. Go to your midjourney account (https://www.midjourney.com/app/)
 4. Download IN BUNDLE (using the select mode) every images of food you upscaled
 5. Drag and drop raw images into './output/[YOUR LIST NAME]/images_downloaded'
-(If you're not max13h, make sure to change your discord pseudo in the script)
 5. Run the module
 
 ### Formating images
