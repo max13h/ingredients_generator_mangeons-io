@@ -1,4 +1,5 @@
 require 'fileutils'
+require_relative './modules/choose_a_list'
 
 puts "===================================================================="
 puts "                Module: Sort list alphabetically"
@@ -10,7 +11,9 @@ puts "!!! MAKE SURE YOUR LSIT IS INSIDE THE FOLDER './food_lists' !!!"
 puts "Enter the FILE NAME to use (eg: food_list.txt ):"
 puts ""
 
-FILE_NAME = File.basename(gets.chomp, ".txt")
+input = choose_a_list
+
+FILE_NAME = File.basename(input, ".txt")
 FILE_PATH = "./food_lists/#{FILE_NAME}.txt"
 OUTPUT_PATH = "./output/#{FILE_NAME}"
 

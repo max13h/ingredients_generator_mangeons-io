@@ -1,4 +1,5 @@
 require_relative "./modules/csv_generator.rb"
+require_relative './modules/choose_a_list'
 require 'fileutils'
 
 puts "===================================================================="
@@ -7,11 +8,11 @@ puts "===================================================================="
 puts ""
 puts ""
 puts "!!! MAKE SURE YOUR FILE IS INSIDE THE FOLDER './food_lists' !!!"
-puts "Enter the FILE NAME to use (eg: food_list.txt ):"
 puts ""
 
+input = choose_a_list
 
-FILE_NAME = File.basename(gets.chomp, ".txt")
+FILE_NAME = File.basename(input, ".txt")
 FILE_PATH = "./food_lists/#{FILE_NAME}.txt"
 OUTPUT_PATH = "./output/#{FILE_NAME}"
 

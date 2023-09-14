@@ -1,4 +1,5 @@
 require 'fileutils'
+require_relative './modules/choose_a_list'
 
 puts "===================================================================="
 puts "           Module: Rename and analyse missing images"
@@ -7,10 +8,10 @@ puts ""
 puts ""
 puts ""
 puts "!!! MAKE SURE IMAGES YOU WANT TO RENAME ARE IN './output/[YOUR LIST NAME]/images_downloaded' !!!"
-puts "Enter the LIST NAME to use (eg: food_list.txt ):"
 puts ""
+input = choose_a_list
 
-LIST_NAME = File.basename(gets.chomp, ".txt")
+LIST_NAME = File.basename(input, ".txt")
 LIST_PATH = "./food_lists/#{LIST_NAME}.txt"
 OUTPUT_PATH = "./output/#{LIST_NAME}/#{LIST_NAME}_PNG"
 IMAGES_PATH = "./output/#{LIST_NAME}/images_downloaded"

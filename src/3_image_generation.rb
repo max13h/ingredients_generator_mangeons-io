@@ -1,5 +1,6 @@
 require_relative "./modules/setup_env.rb"
 require_relative "./modules/image_generation.rb"
+require_relative './modules/choose_a_list'
 
 MY_ENV = setup_env
 
@@ -10,10 +11,10 @@ puts ""
 puts ""
 puts ""
 puts "!!! MAKE SURE YOUR FILE IS INSIDE THE FOLDER 'food_lists' !!!"
-puts "Enter the file name to use (eg: food_list.txt ):"
 puts ""
+input = choose_a_list
 
-FILE_NAME = File.basename(gets.chomp, ".txt")
+FILE_NAME = File.basename(input, ".txt")
 FILE_PATH = "./food_lists/#{FILE_NAME}.txt"
 OUTPUT_PATH = "./output/#{FILE_NAME}/images_downloaded"
 

@@ -21,24 +21,24 @@
 
 ## Modules:
 
-### Sort your list alphabetically and make elements
+### Sort your list alphabetically and make elements unique
 
-* Enter your list of food (format .txt) in food_lists directory (⚠️ 1 line == 1 ingredient)
+* Drop your list of food (format .txt) in food_lists directory (⚠️ 1 line == 1 ingredient)
 * Run the module
-* Inform the list name
+* Select the list name
 
 
 ### Generate a CSV
 
 * Run the module
-* Inform the list name
+* Select the list name
 * Inform the store_area_id from Supabase
 
 
 ### Image prompting for midjourney
 
 * Run the module
-* Inform the list name (The script can take a long time)
+* Select the list name (The script can take a long time)
 
 
 ### Image download + rename
@@ -49,6 +49,7 @@
 4. Download IN BUNDLE (using the select mode) every images of food you upscaled
 5. Drag and drop raw images into './output/[YOUR LIST NAME]/images_downloaded'
 5. Run the module
+6. Select the list name
 
 ### Formating images
 
