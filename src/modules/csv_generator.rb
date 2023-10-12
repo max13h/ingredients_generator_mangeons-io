@@ -7,7 +7,7 @@ def csv_generator
   csv_file_path = "#{OUTPUT_PATH}/CSV_from_#{FILE_NAME}.csv"
 
   CSV.open(csv_file_path, 'w') do |csv|
-    csv << ["name", "name_fr", "guide_price", "store_area_id"]
+    csv << ["name", "name_fr", "guide_price", "store_area_id", "image_url"]
   end
 
   File.open(path).each do |line|
@@ -17,7 +17,7 @@ def csv_generator
     trad_s = URI.open(url).read
     trad = JSON.parse(trad_s)
 
-    row = ["#{ingredient}", "#{trad['responseData']['translatedText']}", 0, "#{STORE_AREA}"]
+    row = ["#{ingredient}", "#{trad['responseData']['translatedText']}", 0, "#{STORE_AREA}", "https://ucshajxbguphokvqudbp.supabase.co/storage/v1/object/public/alimentary_products/#{ingredient.downcase.gsub(' ', '_')}NO_BG.webp"]
 
 
     CSV.open(csv_file_path, 'a') do |csv|
